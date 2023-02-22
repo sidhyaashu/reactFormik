@@ -1,13 +1,13 @@
 
-//HOW TO REMOVE const formik =useFormik({})
+//
 
 
 
 import React from 'react'
 import '../App.css'
-import { Formik,Form ,Field,ErrorMessage,FieldArray,FastField} from 'formik'
+import { Formik,Form ,Field,ErrorMessage,FieldArray,FastField, useFormik} from 'formik'
 import * as Yup from 'yup'
-// import TextError from './TextError'
+// import TextError from './TextError.jsx'
 
 const initialValues ={
         name:'',
@@ -31,17 +31,26 @@ const validationSchema = Yup.object({
         email:Yup.string().email('Invaid email format').required('Required!'),
         channel:Yup.string().required('Required!'),
         address:Yup.string().required('Required!'),
-        comments:Yup.string().required('Required!'),
     })
 
+// const validateComments = value =>{
+//     let error
+//     if(!value){
+//        return error = "Required!"
+//     }
+//     return error
+// }
 
-const YT4 = () => {
+
+const YT5 = () => {
+    
 
   return (
     <Formik className='container'
     initialValues={initialValues}
     validationSchema={validationSchema}
     onSubmit={onSubmit}
+    validateOnMount
     >
       <Form>
         <label htmlFor="name">Name</label>
@@ -83,17 +92,22 @@ const YT4 = () => {
             }  
         </ErrorMessage>
 
+
+
+
+
         <label htmlFor="comments">comments</label>
         <Field as='textarea'
         className='Field' 
         type="text" 
         name='comments' id='comments'
         />
-        <ErrorMessage name='comments'>
-            {
-                (error)=><span>{error}</span>
-            }  
-        </ErrorMessage>
+        {/* <ErrorMessage name='comments' component={TextError}/> */}
+
+
+
+
+
 
 
         <label htmlFor="twitter">twitter</label>
@@ -118,6 +132,7 @@ const YT4 = () => {
                     const { push , remove , form } = fieldArrayProps
                     const { values } = form
                     const {phNumbers } = values
+                    // console.log(' Form errors ', form)
 
                     return <div>
                         {
@@ -172,7 +187,7 @@ const YT4 = () => {
         >
             {
                 (props)=>{
-                    console.log(" render- > ")
+                    // console.log(" render- > ")
                     const { field,form,meta }=props
                     return (
                         <>
@@ -185,10 +200,10 @@ const YT4 = () => {
         </FastField>
 
 
-        <button type='submit'>Submit</button>
+        <button type='submit' disabled={!formik.isValid} >Submit</button>
       </Form>
     </Formik>
   )
 }
 
-export default YT4
+export default YT5

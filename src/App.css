@@ -78,3 +78,7 @@ span{
   color: red;
   align-self: flex-start;
 }
+.err{
+    color: red;
+    align-self: flex-start;
+}
