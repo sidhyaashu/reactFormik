@@ -40,3 +40,41 @@
 .read-the-docs {
   color: #888;
 }
+
+.container{
+  position: relative;
+}
+
+Form{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:1rem 3rem 2rem 3rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 3px rgba(19, 19, 19, 0.5);
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, .1);
+  width: 350px;
+}
+label{
+  align-self: flex-start;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 2rem;
+}
+.Field{
+  padding: 10px 1rem;
+  width: 100%;
+  border-radius: 3px;
+  background: transparent;
+}
+button{
+  align-self: flex-end;
+  margin-top: 2rem;
+}
+span{
+  color: red;
+  align-self: flex-start;
+}
