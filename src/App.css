@@ -48,7 +48,7 @@
 Form{
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding:1rem 3rem 2rem 3rem;
   border-radius: 10px;
