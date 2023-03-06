@@ -1,11 +1,11 @@
 import './App.css'
-import YT6 from './advComponent/YT6'
+import YT9 from './courseEnrollment/YT9'
 
 function App() {
 
   return (
     <div className="App">
-      <YT6/>
+      <YT9/>
     </div>
   )
 }

@@ -25,15 +25,16 @@ const YT6 = () => {
     description:'',
     selectOptions:'',
     radioOptions:'',
-    checkBoxOption:[]
-
+    checkBoxOption:[],
+    birthDate:null
   }
   const validationSchema = yup.object({
     email:yup.string().email('Invaid email format').required('Required'),
     description:yup.string().required('Required'),
     selectOptions:yup.string().required('Required'),
     radioOptions:yup.string().required('Required'),
-    checkBoxOption:yup.array().required('Required')
+    checkBoxOption:yup.array().required('Required'),
+    birthDate:yup.date().required('Required').nullable()
   })
   const onSubmit=values=>console.log(`Form data ->`,values)
 
@@ -56,7 +57,8 @@ const YT6 = () => {
             <br />
             <FormikControll control='checkbox' label='Checkbox' name='checkBoxOption' options={checkBoxOption} /> 
             <br />
-
+            <FormikControll control='date' label='BirthDate' name='birthDate'  /> 
+            <br />
             <button type='submit'>Submit</button>
           </Form>
         )
